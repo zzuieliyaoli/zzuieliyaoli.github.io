@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>除去列表右边距</title>
+	<style>
+		* {
+			padding: 0px;
+			margin: 0px;
+		}
+		div.wrapper {
+			width: 590px;
+			margin: 20px auto;
+			border:1px solid #0767c8;
+			overflow: hidden;
+		}
+		div.wrapper.minus ul{
+			margin-right: -10px;
+		}
+		div.wrapper li{
+			float: left;
+			display: inline-block;
+			width: 90px;
+			height: 90px;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			background-color: #0767c8;
+		}
+		.clear:after{
+			content: " ";
+			display: table;
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper clear">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+	<div class="wrapper minus clear">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

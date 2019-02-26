@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Touch Event</title>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <style media="screen">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .wrapper {
+            height: 4000px;
+            background: linear-gradient(#00B9F2, black);
+        }
+        html,body {
+            height: 100%;
+        }
+        #messageContainer {
+            position: fixed;
+            bottom: 0px;
+            background-color: black;
+            color: #FFF;
+            line-height: 1.5;
+            padding: 10px 5px 20px;
+
+            overflow: hidden;
+            height: 50%;
+            width: 85%;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <br>
+        <a href="javascript:;">Clickable Element</a>
+    </div>
+    <div id="messageContainer">
+
+    </div>
+
+    <script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+        var messageContainer = document.getElementById('messageContainer');
+        var index = 0;
+
+        function updateMessage (name) {
+
+            var li = document.createElement('li');
+            var time = new Date();
+            li.textContent = '' + index + ' Event ' + name + ' Time ' + time.getMinutes() + ' ' + time.getSeconds();
+
+            if (index > 8) {
+                messageContainer.firstChild.remove();
+            }
+            messageContainer.appendChild(li);
+            index = index + 1;
+
+        }
+        document.documentElement.addEventListener('touchstart', function (event) {
+            updateMessage(event.type)
+        }, false);
+
+        document.documentElement.addEventListener('touchmove', function (event) {
+            updateMessage(event.type)
+
+        }, false);
+
+        document.documentElement.addEventListener('touchend', function (event) {
+            updateMessage(event.type)
+
+        }, false);
+
+        document.documentElement.addEventListener('click', function (event) {
+            updateMessage(event.type)
+
+        }, false);
+
+        document.addEventListener('scroll', function (event) {
+            updateMessage(event.type)
+        }, false);
+    });
+
+
+    </script>
+    <script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.11.1.js'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+</body>
+</html>
