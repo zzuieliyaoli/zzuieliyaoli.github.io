@@ -2,7 +2,7 @@
 layout: post
 title:  "Algorithms List（一） —— 题目"
 date:   2017-10-15
-categories: [Algorithm]
+categories: [Algorithms]
 ---
 
 > 将题目分类，总结常用的解题思路
