@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实现一个浮动布局，红色容器中每一行的蓝色容器数量随着浏览器宽度的变化而变化</title>
+	<meta name="description" content="实现一个浮动布局，红色容器中每一行的蓝色容器数量随着浏览器宽度的变化而变化">
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		div.wrapper{
+			background-color: #A1C5BB;
+			width: 100%;
+		}
+		div.wrapper div.item{
+			width: 100px;
+			height: 100px;
+			margin: 20px;
+			float: left;
+			display: inline-block;
+
+			background-color: #3F5057;
+		}
+
+		.clear:before,
+		.clear:after {
+		    content: "";
+		    display: table;
+		} 
+		.clear:after {
+		    clear: both;
+		}
+		.clear {
+		    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper clear">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+</body>
+</html>

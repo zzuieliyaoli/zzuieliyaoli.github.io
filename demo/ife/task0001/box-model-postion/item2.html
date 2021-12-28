@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>不使用border-radius的情况下实现一个可复用的高度和宽度都自适应的圆角矩形</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		html,body{
+			height: 100%;
+			width: 100%;
+		}
+		div.wrapper{
+			height: 100%;
+			width: 100%;
+			background-color: #347AA9;
+			position: relative;
+		}
+
+		div.border-radius{
+			position: absolute;
+			height: 50px;
+			width: 50px;
+			background: url(./images/item2/bg.png);
+		}
+		div.top-left{
+			left: 0;
+			top: 0;
+
+		}
+		div.top-right{
+			right: 0;
+			top: 0;
+			background-position: -50px 0px;
+		}
+		div.bottom-left{
+			left: 0;
+			bottom: 0;
+
+			background-position: 0px 50px;
+		}
+		div.bottom-right{
+			right: 0;
+			bottom: 0;
+
+			background-position: -50px -50px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+			<!-- 用四个border-radius块，绝对定位在所要呈现圆角效果的框的四个角 -->
+			<!-- 分别对四个border-radius块设置background-image和background-postion -->
+			<div class="border-radius top-left"></div>
+			<div class="border-radius top-right"></div>
+			<div class="border-radius bottom-left"></div>
+			<div class="border-radius bottom-right"></div>
+	</div>
+</body>
+</html>

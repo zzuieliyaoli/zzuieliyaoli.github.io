@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>倒计时</title>
+  <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+  <style>
+  	body{
+  		text-align: center;
+  	}
+	div.wrapper{
+		display: inline-block;
+	}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+  	<h1>距离2055年10月1日中午12点还有：</h1>
+  	<span id="less_day"></span>天
+  	<span id="less_hour"></span>时
+  	<span id="less_minutes"></span>分
+  	<span id="less_seconds"></span>秒
+  </div>
+  <script>
+  	setInterval("timer()",1000); // 每隔1S执行一次
+  	function timer(){
+		var ts = (new Date(2055, 9, 1, 12, 0, 0)) - (new Date()); //设置目标时间，并计算剩余的毫秒数
+		
+		var dd = parseInt(ts / 1000 / 60 / 60 / 24, 10);  //计算剩余天数
+		var hh = parseInt(ts / 1000 / 60 / 60 % 24, 10);  //计算剩余小时
+		var mm = parseInt(ts / 1000 / 60 % 60, 10);       //计算剩余分钟
+		var ss = parseInt((ts / 1000 ) % 60 , 10);        //秒数
+		
+		//为了美观，在剩余时间的数字小于10时转换为0X
+		dd = checkTime(dd);    
+		hh = checkTime(hh);
+		mm = checkTime(mm);
+		ss = checkTime(ss);
+
+		//重写数字
+		$("#less_day").html(dd);  
+		$("#less_hour").html(hh);
+		$("#less_minutes").html(mm);
+		$("#less_seconds").html(ss);
+	}
+
+	////为了美观，在剩余时间的数字小于10时转换为0X
+	function checkTime(i){  
+	   if (i < 10) {  
+		   i = "0" + i;  
+		}  
+	   return i;  
+	}  
+	
+  </script>
+</body>
+</html>

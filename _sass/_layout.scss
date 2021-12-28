@@ -1,0 +1,321 @@
+/**
+ * Site header
+ */
+.site-header {
+  min-height: 54px;
+  // Positioning context for the mobile navigation icon
+  position: relative;
+  background-color: #000;
+  margin-bottom: 40px;
+}
+
+.site-title {
+  font-size: 26px;
+  line-height: 56px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+
+  &,
+  &:visited {}
+}
+
+.site-nav {
+  float: left;
+  line-height: 66px;
+
+  .menu-icon {
+    display: none;
+  }
+
+  .page-link {
+    margin-right: 16px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: $base-line-height;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.75);
+
+    &:hover {
+      color: #EEE;
+    }
+  }
+}
+
+@include media-query($on-palm) {}
+
+
+/**
+ * Site footer
+ */
+
+.footer-lists {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px #e1e4e8 solid;
+
+  .copyright {
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+  }
+
+  .catalog {
+    display: flex;
+    align-items: center;
+    line-height: 24px;
+    height: 24px;
+
+    a {
+      margin-left: 16px;
+      font-size: 12px;
+    }
+  }
+}
+
+
+/**
+ * Page content
+ */
+.page-content {
+  border-radius: 3px;
+}
+
+.page-content.about .post-content {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+.page-heading {
+  font-size: 20px;
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  li {
+    @extend %clearfix;
+    height: 36px;
+    display: flex;
+    align-items: center;
+  }
+
+  h2 {
+    flex: 1;
+    margin-bottom: 0;
+    margin-left: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+  }
+}
+
+.post-meta {
+  font-size: $small-font-size;
+  color: $grey-color;
+  width: 80px;
+  line-height: 36px;
+  height: 36px;
+}
+
+.post-link {
+  // margin-left: 1em;
+}
+
+/**
+ * Posts
+ */
+.post {
+  padding: 45px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #FFF;
+
+  @include media-query($on-laptop) {
+    padding: 20px 15px 15px 15px;
+  }
+}
+
+.post-header {
+  margin-bottom: $spacing-unit;
+  border-bottom: 1px solid #ddd;
+}
+
+.post-title {
+  font-size: 30px;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  font-weight: 600;
+
+  @include media-query($on-laptop) {
+    font-size: 1rem/1.42;
+  }
+}
+
+.post-content {
+  border-bottom: 1px solid #ddd;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  h1 {
+    font-size: 1.6em;
+    padding-bottom: 0.3em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    padding-bottom: 0.3em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+  }
+
+  h4 {
+    font-size: 1em;
+  }
+
+  .content-bottom {}
+
+  .payments {
+    padding-top: 1em;
+    border-top: 1px solid #ddd;
+    position: relative;
+
+    &:after {
+      content: " ";
+      display: table;
+      clear: both;
+    }
+
+    img {
+      float: left;
+      width: 30%;
+      margin-right: 2%;
+    }
+  }
+}
+
+ul.pager {
+  padding: $spacing-unit/2 0;
+  border-bottom: 1px solid #ddd;
+  list-style: none;
+  margin: 0;
+
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+
+  span {
+    font-size: 14px;
+    color: #828282;
+    margin-right: 1em;
+    display: inline-block;
+    width: 80px;
+  }
+}
+
+.content-bottom {
+  margin-top: 30px;
+}
+
+.comments {
+  margin-top: $spacing-unit/2;
+}
+
+div.category {
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    display: flex;
+
+    span.text-muted {
+      font-size: 14px;
+      color: #828282;
+      display: inline-block;
+      width: 80px;
+    }
+
+    div {
+      flex: 1;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    a {
+      // flex: 1;
+      display: inline-block;
+      font-size: 16px;
+      height: 21px;
+      line-height: 21px;
+      margin-left: 1em;
+    }
+  }
+}
+
+.github-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 66px;
+  width: 80px;
+  overflow: hidden;
+
+  &:hover {
+    .octo-arm {
+      animation: octocat-wave 560ms ease-in-out
+    }
+  }
+}
+
+@keyframes octocat-wave {
+
+  0%,
+  100% {
+    transform: rotate(0)
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg)
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg)
+  }
+}
+
+@include media-query($on-laptop) {
+  .github-corner {
+    .octo-arm {
+      animation: octocat-wave 560ms ease-in-out
+    }
+
+    &:hover {
+      .octo-arm {
+        animation: none
+      }
+    }
+  }
+}

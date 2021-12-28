@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>用两种不同的方法来实现一个两列布局，其中左侧部分宽度固定、右侧部分宽度随浏览器宽度的变化而自适应变化</title>
+	<meta name="description" content="用两种不同的方法来实现一个两列布局，其中左侧部分宽度固定、右侧部分宽度随浏览器宽度的变化而自适应变化">
+
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		div.wrapperFirst div.aside {
+			float: left;
+			width: 360px;
+			height: 300px;
+			background-color: #C9EFBA;
+		}
+		div.wrapperFirst div.main {
+			width: 100%;
+			height: 300px;
+			margin-right: -360px; 
+			background-color: #F5D999;
+		}
+
+		div.wrapperSecond {
+			position: relative;
+			margin-top: 20px;
+		}
+		div.wrapperSecond div.aside {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 360px;
+			height: 300px;
+			background-color: #C9EFBA;
+		}
+		div.wrapperSecond div.main {
+			width: 100%;
+			height: 300px;
+			background-color: #F5D999;
+		}
+		div.wrapperSecond div.content {
+			margin-left: 360px;
+		}
+		
+		div.wrapperThird {
+			margin-top: 20px;
+		}
+
+		div.wrapperThird div.aside {
+			float: left;
+			width: 360px;
+			height: 300px;
+			background-color: #C9EFBA;
+		}
+		div.wrapperThird div.main div.content {
+			height: 300px;
+			margin-left: 360px;
+			background-color: #F5D999;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 这几个方法其实就涉及到两点，一个是如何使aside在预定位置，一个是aside在预定情况的情况下，
+	使得main内内容正常显示。前者可以使用浮动、绝对定位，后者可以对main使用负边距，还是content使用margin-left。 -->
+	<div class="wrapperFirst">
+		<div class="aside">
+			<h1>aside</h1>
+		</div>
+		<div class="main">
+			<div class="content">
+				<h1>main方法一</h1>
+				<br/>
+				JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapperSecond">
+		<div class="aside">
+			<h1>aside</h1>
+		</div>
+		<div class="main">
+			<div class="content">
+				<h1>main方法二</h1>
+				<br/>
+				JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapperThird">
+		<div class="aside">
+			<h1>aside</h1>
+		</div>
+		<div class="main">
+			<div class="content">
+				<h1>main方法三</h1>
+				<br/>
+				JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。JavaScript 是弱类型的动态脚本语言，支持多种编程范式，包括面向对象和函数式编程。
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

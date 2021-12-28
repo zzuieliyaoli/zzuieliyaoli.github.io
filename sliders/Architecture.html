@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>看见音乐前端开发的困境与畅想</title>
+		<meta name="description" content="看见音乐Web前端开发的困境与畅想">
+		<meta name="author" content="zzuieliyaoli@gmail.com">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h4>「看见音乐」</h4>
+					<h1>前端开发的困境与畅想</h1>
+					<p>
+						<small><a href="https://github.com/zzuieliyaoli" target="_blank">大力@zzuieliyaoli</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>为什么要有这次分享？</h2>
+					<ul>
+						<li class="fragment">讲一讲业界前端开发的现状</li>
+						<li class="fragment">讲tu述cao看见音乐前端的困境</li>
+						<li class="fragment">寻求各位后端大牛的配合以及帮助</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>写在开始之前</h2>
+					<ul>
+						<li class="fragment">求同存异，创造大和谐</li>
+						<li class="fragment">暂且宏观地讨论问题</li>
+						<li class="fragment">分析利弊，而不是对错</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>业界前端开发的现状</h2>
+					<ul>
+						<li class="fragment">工程化</li>
+						<li class="fragment">组件化</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h3>前端开发工程化</h3>
+						<p class="fragment">外因</p>
+						<ul>
+							<li class="fragment">资源复杂：HTML/CSS/JS/Img/Swf</li>
+							<li class="fragment">项目越来越大，页面越来越多</li>
+						</ul>
+						<p class="fragment">内因</p>
+						<ul>
+							<li class="fragment">基础设施越来越完善</li>
+							<li class="fragment">自动化测试，可视化开发，团队协作</li>
+						</ul>
+					</section>
+					<section>
+						<p>前端工程化应运而生</p>
+						<ul>
+							<li class="fragment">目录结构</li>
+							<li class="fragment">代码编写</li>
+							<li class="fragment">构建工具</li>
+							<li class="fragment">代码规范/校验</li>
+							<li class="fragment">代码测试</li>
+						</ul>
+					</section>
+					<section>
+						<h4>目录结构</h4>
+						<div data-markdown class="fragment">
+				```
+				项目一
+				├── /dist/                              # 代码打包目录
+				├── /node_modules/                      # node依赖包
+				├── /src/                               # 源码目录
+				│   ├── /pages/                         # 页面
+				│   │   ├── /page1/
+				│   │   │   ├── 1.html
+				│   │   │   ├── 1.scss
+				│   │   │   ├── 1.js
+				│   ├── /components/                    # 公用组件
+				│   │   ├── /LeftBar/                   # 侧边栏
+				│   │   │   ├── bar.html
+				│   │   │   ├── bar.scss
+				│   │   │   ├── bar.js
+				│   └── /public/                        # 公用JS、样式、图片、字体资源
+				├── webpack.config.js                   # 构建工具的配置文件
+				└── package.json                        # node 包文件
+				```
+						</div>
+
+					</section>
+
+
+					<section>
+						<h4>代码编写方式</h4>
+						<p class="fragment">所见即所得 => 预先编译</p>
+						<ul>
+							<li class="fragment" >SASS/LESS-CSS-Autoprefixer</li>
+							<li class="fragment">CoffeeScript/TypeScript-JS</li>
+							<li class="fragment">ES6-Babel-ES5</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>开发工具</h4>
+						<ul>
+							<li class="fragment">Node/MockServer</li>
+							<li class="fragment">WebPack/Grunt/Gulp/Browserify</li>
+							<li class="fragment">Livereload/BrowserSync/HotReplaceModule</li>
+							<li class="fragment">ChromeDevTool</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>代码规范/校验</h4>
+						<ul>
+							<li class="fragment">JSLint/ESLint/CSSLint</li>
+							<li class="fragment">AirBnb/Best Practice</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>代码测试</h4>
+						<ul>
+							<li class="fragment">PhantomJS/Mocha/Chai</li>
+							<li class="fragment">Karma</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>前端开发组件化</h3>
+						<ul>
+							<li class="fragment">什么是组件化？</li>
+							<li class="fragment">与模块化的区别与联系？</li>
+							<li class="fragment">目的是什么？</li>
+							<li class="fragment">利与弊</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>组件化的定义</h4>
+						<img data-src="./figures/architecture/components-1.png" alt="components" class="fragment">
+						<ul>
+							<li class="fragment">页面基本按照组件来分，组件是最小的开发单位</li>
+							<li class="fragment">每个组件内维护自己的HTML/JS/CSS/Img等资源</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>模块化与组件化的区别与联系</h4>
+						<table>
+							<thead>
+								<tr class="fragment">
+									<th>  </th>
+									<th>模块化</th>
+									<th>组件化</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="fragment">
+									<td>对象</td>
+									<td>JS/CSS</td>
+									<td>HTML-CSS-JS..</td>
+								</tr>
+								<tr class="fragment">
+									<td>标准</td>
+									<td>AMD/ES6 Modules</td>
+									<td>WebComponents/R...</td>
+								</tr>
+								<tr class="fragment">
+									<td>主要目的</td>
+									<td>复用</td>
+									<td>分治</td>
+								</tr>
+								<tr class="fragment">
+									<td> </td>
+									<td> </td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment">模块化是组件化的基础</p>
+
+					</section>
+					<section>
+						<h4>组件化的目的</h4>
+						<img data-src="./figures/architecture/components-2.png" alt="components" class="fragment">
+						<p class="fragment">分治，提高可维护性</p>
+					</section>
+
+					<section>
+						<h4>组件化的利与弊</h4>
+						<table>
+							<thead>
+								<tr class="fragment">
+									<th>利</th>
+									<th>弊</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="fragment">
+									<td>便于维护</td>
+									<td>对于工程师要求高</td>
+								</tr>
+								<tr class="fragment">
+									<td>工具</td>
+									<td>缺乏标准</td>
+								</tr>
+								<tr class="fragment">
+									<td>开发爽</td>
+									<td>老旧项目重构工作量大</td>
+								</tr>
+								<tr class="fragment">
+									<td>可拓展</td>
+									<td>对工程化要求高</td>
+								</tr>
+								<tr class="fragment">
+									<td> </td>
+									<td> </td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>看见前端的困境</h2>
+						<ul>
+							<li class="fragment">模块化几乎没有</li>
+							<li class="fragment">项目目录结构老旧</li>
+							<li class="fragment">资源引用不清晰</li>
+							<li class="fragment">工程化的探索几乎没有</li>
+						</ul>
+						<p class="fragment">结果：。。。。</p>
+					</section>
+
+					<section>
+						<h3>如何突破困局？</h3>
+						<ul>
+							<li class="fragment">新项目应用工程化</li>
+							<li class="fragment">老项目分组件重构</li>
+						</ul>
+					</section>
+					<section>
+						<h2>各位后端带带我</h2>
+						<img data-src="./figures/architecture/good-driver.jpg" alt="老司机">
+					</section>
+					<section>
+						<h3>可能出现的问题？</h3>
+						<p class="fragment">发布流程？</p>
+						<p class="fragment">工作量？</p>
+						<p class="fragment">新目录结构与现有的目录结构可以兼容吗？</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>谢谢</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
