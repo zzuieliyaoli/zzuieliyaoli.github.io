@@ -7,8 +7,8 @@ permalink: /category/
 {% assign categories = site.categories | sort: category[1].size %}
 {% for category in categories %}
   <div class="category" id="{{category[0]}}">
-    <h2 >{{ category[0] }}</h2>
-    <ul >
+    <h2>{{ category[0] }}</h2>
+    <ul>
       {% assign pages_list = category[1] %}
       {% for node in pages_list %}
         {% if node.title != null %}
